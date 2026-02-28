@@ -1,55 +1,79 @@
-# TETHER — Transparent Vehicle Identity & Verification System
+# 🚗 TETHER — Transparent Vehicle Identity & Verification System
 
-## Overview
-TETHER is a smart vehicle verification platform that enables instant vehicle identity validation using a digital status system.
+## 🌐 Overview
+TETHER is a smart vehicle verification platform designed to modernize how vehicles are authenticated, monitored, and validated during roadside inspections.
 
-The system allows vehicle owners and officials to verify authorization, insurance validity, and vehicle safety through a unified verification interface.
+The system enables instant verification of vehicle authorization, insurance validity, and security status through a unified digital identity model.
 
-This project demonstrates the core logic of a future-ready vehicle governance system.
+This project demonstrates the core logic of a future-ready vehicle governance system built for hackathon evaluation.
 
 ---
 
-## User Roles
+## 👥 User Roles
 - Vehicle Owner
 - Government / Traffic Official
 
 ---
 
-## Key Features
+## ⭐ Key Features
 
-### Vehicle Status System
-- 🟢 GREEN — Valid vehicle
-- 🟡 YELLOW — Authorized guest driver
-- 🔴 RED — Insurance expired or vehicle reported stolen
-
-### Guest Authorization
-Owners can authorize another driver.
-
-### Official Verification
-Officials simulate scanning a vehicle to instantly view its status.
-
-### Immutable Scan History
-Every scan creates a permanent record that cannot be deleted.
-
-### Trust Score System
-Each verification updates a vehicle trust score similar to a credit rating.
+### 🟢 Dynamic Vehicle Status System
+| Status | Meaning |
+|---|---|
+🟢 GREEN | Vehicle compliant & owner verified |
+🟡 YELLOW | Authorized guest driver |
+🔴 RED | Insurance expired or vehicle reported stolen |
 
 ---
 
-## Core Concept
-TETHER introduces transparency and accountability into vehicle verification by maintaining a shared vehicle history visible to both owners and officials.
+### 👤 Owner Dashboard
+- Manage vehicle details
+- Authorize guest drivers
+- Report stolen vehicle
+- Recover vehicle status
+- View trust score
 
 ---
 
-## Tech Stack
-- HTML
-- CSS
-- JavaScript
-- LocalStorage (for simulation)
+### 👮 Official Verification Scanner
+- Simulated vehicle scan
+- Instant compliance verification
+- Automated status detection
+- Trust score updates dynamically
 
 ---
 
-## Pages
+### 📜 Immutable Vehicle History
+Every scan creates a permanent verification record.
+
+✔ Cannot be edited  
+✔ Cannot be deleted  
+✔ Shared transparency between owner & officials
+
+---
+
+### ⭐ Vehicle Trust Score
+A reputation-based scoring system similar to a credit score.
+
+- Positive scans increase trust
+- Violations reduce score
+- Helps prioritize inspections intelligently
+
+---
+
+## 🧠 System Logic
+
+---
+
+## 🛠 Tech Stack
+- HTML5
+- CSS3 (Modern UI + Animations)
+- Vanilla JavaScript
+- LocalStorage (Simulation Layer)
+
+---
+
+## 📱 Pages
 - Home
 - Owner Dashboard
 - Official Scanner
@@ -57,18 +81,20 @@ TETHER introduces transparency and accountability into vehicle verification by m
 
 ---
 
-## Future Scope
+## 🚀 Future Scope
 - Mobile App Integration
-- Real QR Code Scanning
-- Government Database Integration
+- Secure authentication system
+- Real QR Code scanning
+- Centralized backend database
+- Government API integration
 - Blockchain-backed verification logs
 
 ---
 
-## Team Project
-Built for Hackathon Round 1 demonstration.
+## 👨‍💻 Team Project
+Developed for Hackathon Round-1 submission.
 
 ---
 
-## Deployment
-(Add deployed link here after hosting)
+## 🌍 Deployment
+(Live deployment link will be added after hosting)
