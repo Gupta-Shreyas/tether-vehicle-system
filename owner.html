@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Owner Dashboard - TETHER</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<div class="container">
+  <h1>TETHER</h1>
+  <h2>Owner Dashboard</h2>
+
+  <!-- Vehicle Info -->
+  <div class="card">
+    <h3 id="vehicleNumber"></h3>
+    <p id="ownerName"></p>
+  </div>
+
+  <!-- Trust Score -->
+  <div class="card">
+    <h3>Vehicle Trust Score</h3>
+    <h1 id="trustScore" class="score"></h1>
+    <p id="scoreMessage"></p>
+  </div>
+
+  <!-- Status -->
+  <div class="card">
+    <h3>Current Status</h3>
+    <h2 id="statusBadge"></h2>
+  </div>
+
+  <!-- Insurance Toggle -->
+  <div class="card">
+    <h3>Insurance Status</h3>
+    <button onclick="toggleInsurance()" class="primary">
+      Toggle Insurance Valid / Expired
+    </button>
+  </div>
+
+  <!-- Guest Authorization -->
+  <div class="card">
+    <h3>Authorize Guest Driver</h3>
+    <input id="guestName" placeholder="Enter guest name"/>
+    <br><br>
+    <button onclick="authorizeGuest()" class="primary">
+      Authorize Driver
+    </button>
+    <button onclick="removeGuest()" class="yellow">
+      Remove Guest
+    </button>
+  </div>
+
+  <!-- Report Stolen -->
+  <div class="card">
+  <h3>Emergency</h3>
+
+  <button onclick="reportStolen()" class="red">
+    REPORT VEHICLE STOLEN
+  </button>
+
+  <button id="foundBtn" onclick="vehicleFound()" class="green" style="display:none;">
+    VEHICLE FOUND
+  </button>
+
+</div>
+
+  <br>
+  <a href="history.html"><button>View Vehicle History</button></a>
+  <a href="index.html"><button>Back Home</button></a>
+
+</div>
+
+<script src="js/data.js"></script>
+<script src="js/logic.js"></script>
+<script src="js/owner.js"></script>
+
+</body>
+</html>
