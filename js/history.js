@@ -26,6 +26,8 @@ function loadHistory() {
         <p><strong>Driver:</strong> ${record.driver}</p>
         <p><strong>Insurance:</strong> ${record.insurance}</p>
         <p><strong>Trust Score:</strong> ${record.trustScore}</p>
+        <p><strong>Officer:</strong> ${record.officer}</p>
+        <p><strong>PUC:</strong> ${record.puc}</p>
       </div>
     `;
   });

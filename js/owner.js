@@ -110,4 +110,10 @@ function vehicleFound() {
   saveVehicle(vehicle);
   refreshUI();
 }
+
+function togglePUC() {
+  vehicle.pucValid = !vehicle.pucValid;
+  saveVehicle(vehicle);
+  refreshUI();
+}
 refreshUI();

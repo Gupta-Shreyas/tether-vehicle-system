@@ -1,8 +1,9 @@
 // Default vehicle data
 const defaultVehicle = {
-  owner: "Arjun",
+  owner: "Shreyas",
   number: "TN-09-AB-1234",
   insuranceValid: true,
+  pucValid: true,   // ✅ ADD THIS
   stolen: false,
   guest: {
     active: false,

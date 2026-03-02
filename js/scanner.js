@@ -1,4 +1,11 @@
 function scanVehicle() {
+  
+  const officerId = document.getElementById("officerId").value;
+
+  if (!officerId) {
+    alert("Please enter Officer ID");
+    return;
+  }
 
   const resultArea = document.getElementById("resultArea");
 
@@ -20,7 +27,7 @@ function scanVehicle() {
     const status = getStatus(vehicle);
 
     updateTrustScore(vehicle, status);
-    addHistory(vehicle, status);
+    addHistory(vehicle, status, "SCAN", officerId);
 
     saveVehicle(vehicle);
 
@@ -32,6 +39,7 @@ function scanVehicle() {
 function showResult(vehicle, status) {
 
   let colorClass = "green";
+  const reasons = getStatusReason(vehicle);
   let statusClass = "status-green";
 
   if (status === "YELLOW") {
@@ -54,19 +62,37 @@ function showResult(vehicle, status) {
   document.getElementById("resultArea").innerHTML = `
     <div class="card ${colorClass} fade-in">
       ${alertMessage}
-      <h2 class="success-title">✔ Vehicle Verification Successful</h2>
+      <h2 style="font-weight:700; font-size:26px;">
+      ✔ VEHICLE VERIFICATION SUCCESSFUL
+      </h2>
 
-      <p><strong>Owner:</strong> ${vehicle.owner}</p>
+      <p>
+        <span class="label">OFFICER ID:</span>
+        <span class="value">${officerId}</span>
+      </p>
+      
+      <p>
+        <span class="label">OWNER:</span>
+        <span class="value">${vehicle.owner}</span>
+      </p>
 
-      <p><strong>Driver:</strong> ${
-        vehicle.guest.active
-          ? vehicle.guest.name + " (Authorized Guest)"
-          : vehicle.owner
-      }</p>
+      <p>
+        <span class="label">DRIVER:</span>
+        <span class="value">
+          ${
+            vehicle.guest.active
+              ? vehicle.guest.name + " (Authorized Guest)"
+              : vehicle.owner
+          }
+        </span>
+      </p>
 
-      <p><strong>Insurance:</strong> ${
-        vehicle.insuranceValid ? "Valid" : "Expired"
-      }</p>
+      <p>
+        <span class="label">INSURANCE:</span>
+        <span class="value">
+          ${vehicle.insuranceValid ? "Valid" : "Expired"}
+        </span>
+      </p>
 
       <h2>Status: 
         <span class="${statusClass}">
@@ -74,9 +100,17 @@ function showResult(vehicle, status) {
         </span>
       </h2>
 
+      <div class="card">
+        <h3>Verification Details</h3>
+        ${reasons.map(reason => `
+            <p class="value">${reason}</p>
+        `).join("")}
+      </div>
+
       <h3>Trust Score:</h3>
       <h2 id="scoreNumber" class="score">0 / 100</h2>
     </div>
+    
   `;
   animateScore(vehicle.trustScore);
 }
